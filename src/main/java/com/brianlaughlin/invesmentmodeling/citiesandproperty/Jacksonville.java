@@ -1,8 +1,9 @@
-package com.brianlaughlin.invesmentmodeling.model;
+package com.brianlaughlin.invesmentmodeling.citiesandproperty;
 
 public class Jacksonville extends City {
     public Jacksonville() {
         name = "Jacksonville";
         taxRate = 0.0101; // 1.01%
+        state = "FL";
     }
 }
