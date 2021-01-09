@@ -13,6 +13,8 @@ public class Property {
     Double rehab = 0.0;
     Double deferedMaintenance = 0.0;
     Double vacancyRate = 0.0;
+    Double hoa = 0.0;
+    Double interestRate = 0.08; // 8%
 
     City city;
 
@@ -28,10 +30,12 @@ public class Property {
 
 
     public Double getTotalMonthlyExpense() {
-        // TODO: FINISH THE FORMULA
-        // property tax + hoa + loan payment + property mgt fee
 
-        return getPropertyTaxMontly() + (getPropertyManagementRate() * rent);
+        return getPropertyTaxMontly() + hoa + getLoanPayment() + (getPropertyManagementRate() * rent);
+    }
+
+    private Double getLoanPayment() {
+        return loanAmount * interestRate / 12;
     }
 
     Double totalMonthlyExpense;
@@ -77,7 +81,7 @@ public class Property {
         return rent - getTotalMonthlyExpense();
     }
 
-    public Double getDownpayment(){
+    public Double getDownpayment() {
         return purchasePrice - loanAmount;
     }
 
