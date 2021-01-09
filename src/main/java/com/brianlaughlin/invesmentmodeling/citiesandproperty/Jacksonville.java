@@ -5,5 +5,6 @@ public class Jacksonville extends City {
         name = "Jacksonville";
         taxRate = 0.0101; // 1.01%
         state = "FL";
+        investmentReturnMinimum = 0.12;
     }
 }

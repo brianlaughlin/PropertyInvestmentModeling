@@ -89,4 +89,10 @@ public class Property {
         // Annual income / (repair cost + downpayment + take out expenses)
         return getAnnualIncome() / (rehab + getDownpayment() + (getEstimatedTakeoutExpenseRate() * purchasePrice));
     }
+
+    public Boolean isExpectedInvestmentMinAchieved(){
+        if (city.investmentReturnMinimum <= getCashOnCashReturn()) {
+            return true;
+        } else return false;
+    }
 }

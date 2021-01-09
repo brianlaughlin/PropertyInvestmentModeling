@@ -28,7 +28,7 @@ public class Testing {
         System.out.println("Total expenses : " + defaultNumberFormat.format(jacksonvilleTest.getTotalMonthlyExpense()));
         System.out.println("Annual Income : " + defaultNumberFormat.format(jacksonvilleTest.getAnnualIncome()));
         System.out.println("Cash on cash return : " + jacksonvilleTest.getCashOnCashReturn());
-
+        System.out.println("Propety meets investment requirement : " + jacksonvilleTest.isExpectedInvestmentMinAchieved());
 
     }
 }

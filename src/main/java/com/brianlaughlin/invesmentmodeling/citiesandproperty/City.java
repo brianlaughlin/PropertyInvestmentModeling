@@ -6,5 +6,6 @@ public abstract class City {
     String name;
     Double taxRate;
     String state;
+    Double investmentReturnMinimum;
 
 }

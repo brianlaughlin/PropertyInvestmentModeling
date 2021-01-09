@@ -5,5 +5,6 @@ public class Detroit extends City{
         name = "Detroit";
         taxRate = 0.0269;  // 2.69%
         state = "MI";
+        investmentReturnMinimum = 0.14;
     }
 }
