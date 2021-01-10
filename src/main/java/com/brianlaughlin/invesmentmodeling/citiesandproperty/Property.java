@@ -4,7 +4,7 @@ import com.brianlaughlin.invesmentmodeling.faker.StreetNameGenerator;
 import lombok.Data;
 
 @Data
-public class Property {
+public class Property extends Cities {
     String street;
     String zipcode;
     Double rent = 0.0;
@@ -16,9 +16,7 @@ public class Property {
     Double hoa = 0.0;
     Double interestRate = 0.08; // 8%
 
-    City city;
-
-    Double purchasePrice;
+    Double purchasePrice = 0.0;
     String notes;
     Integer neighborhoodRating;
 
@@ -28,31 +26,18 @@ public class Property {
     Double monthlyNetIncome = 0.0;
     Double cashOnCashReturn = 0.0;
 
-
-    public Double getTotalMonthlyExpense() {
-
-        return getPropertyTaxMontly() + hoa + getLoanPayment() + (getPropertyManagementRate() * rent);
-    }
-
-    private Double getLoanPayment() {
-        return loanAmount * interestRate / 12;
-    }
-
-    Double totalMonthlyExpense;
+    Double totalMonthlyExpense = 0.0;
 
 
     public Property(String cityName, Double purchasePrice) {
         this.purchasePrice = purchasePrice;
-        switch (cityName) {
-            case "Detroit":
-                this.city = new Detroit();
-                break;
-            case "Jacksonville":
-                this.city = new Jacksonville();
-                break;
-        }
+        setCityClassByName(cityName);
 
         makeUpAddress();
+    }
+
+    public Property(String cityName) {
+        setCityClassByName(cityName);
     }
 
     public Double getPropertyTaxYearly() {
@@ -89,6 +74,16 @@ public class Property {
 
         return getAnnualIncome() / (rehab + getDownpayment() + (getEstimatedTakeoutExpenseRate() * purchasePrice));
     }
+
+    public Double getTotalMonthlyExpense() {
+
+        return getPropertyTaxMontly() + hoa + getLoanPayment() + (getPropertyManagementRate() * rent);
+    }
+
+    private Double getLoanPayment() {
+        return loanAmount * interestRate / 12;
+    }
+
 
     public Boolean isExpectedInvestmentMinAchieved(){
         return city.investmentReturnMinimum <= getCashOnCashReturn();

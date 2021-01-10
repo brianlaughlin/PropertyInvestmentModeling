@@ -3,6 +3,8 @@ package com.brianlaughlin.invesmentmodeling;
 import com.brianlaughlin.invesmentmodeling.citiesandproperty.Property;
 
 import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Testing {
     public static void main(String[] args) {
@@ -30,5 +32,10 @@ public class Testing {
         System.out.println("Cash on cash return : " + jacksonvilleTest.getCashOnCashReturn());
         System.out.println("Propety meets investment requirement : " + jacksonvilleTest.isExpectedInvestmentMinAchieved());
 
+        List<Property> propeties = new ArrayList<>();
+        for (int i = 0; i < 100; i++) {
+          Property p = new Property("Jacksonville");
+        }
     }
+
 }
