@@ -5,6 +5,9 @@ import lombok.Data;
 
 @Data
 public class Property extends Cities {
+    static final Double INVESTOR_PERCENTAGE = 0.75; // 75%
+    static final Double TEAM_PERCENTAGE = 0.25; // 25%
+
     String street;
     String zipcode;
     Double rent = 0.0;
@@ -27,6 +30,10 @@ public class Property extends Cities {
     Double cashOnCashReturn = 0.0;
 
     Double totalMonthlyExpense = 0.0;
+
+    Double takeOutInvestorRate = 0.0;
+    Double takeOutCost = 0.0;
+    Double padPercentage = 0.10;
 
 
     public Property(String cityName, Double purchasePrice) {
@@ -72,7 +79,7 @@ public class Property extends Cities {
 
     public Double getCashOnCashReturn() {
 
-        return getAnnualIncome() / (rehab + getDownpayment() + (getEstimatedTakeoutExpenseRate() * purchasePrice));
+        return getAnnualIncome() / (rehab + getDownpayment() + (estimatedTakeoutExpenseRate * (purchasePrice + rehab)));
     }
 
     public Double getTotalMonthlyExpense() {
@@ -84,8 +91,18 @@ public class Property extends Cities {
         return loanAmount * interestRate / 12;
     }
 
+    // Annual rent * 75% / Take ot cost
+    public Double getInvestorTakeOutRate() {
+        return (this.rent * 12) * INVESTOR_PERCENTAGE / getTakeOutCost();
+    }
 
-    public Boolean isExpectedInvestmentMinAchieved(){
+    public Boolean isExpectedInvestmentMinAchieved() {
         return city.investmentReturnMinimum <= getCashOnCashReturn();
     }
+
+    public Double getTakeOutCost() {
+        return (this.purchasePrice + this.rehab) * padPercentage;
+    }
+
+
 }

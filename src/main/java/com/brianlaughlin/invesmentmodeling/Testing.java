@@ -16,9 +16,9 @@ public class Testing {
 
         System.out.println(property.toString());
 
-        Property jacksonvilleTest = new Property("Jacksonville", 75000.00);
+        Property jacksonvilleTest = new Property("Jacksonville", 30000.00);
 
-        jacksonvilleTest.setRent(1650.00);
+        jacksonvilleTest.setRent(300.00);
         jacksonvilleTest.setPropertyManagementRate(0.08);
         jacksonvilleTest.setLoanAmount(0.0);
         jacksonvilleTest.setRehab(6000.00);
@@ -32,10 +32,25 @@ public class Testing {
         System.out.println("Cash on cash return : " + jacksonvilleTest.getCashOnCashReturn());
         System.out.println("Propety meets investment requirement : " + jacksonvilleTest.isExpectedInvestmentMinAchieved());
 
-        List<Property> propeties = new ArrayList<>();
+        Double purchasePrice = 30000.00;
+        List<Property> properties = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
-          Property p = new Property("Jacksonville");
+            Property p = new Property("Jacksonville");
+            p.setPurchasePrice(purchasePrice);
+            purchasePrice = purchasePrice + 5000.00;
+            p.setRehab(6000.00);
+            p.setRent(purchasePrice * 0.01);
+            p.setPropertyManagementRate(0.08);
+            properties.add(p);
         }
+
+        for (Property p : properties) {
+            System.out.println("Purchase price: " + p.getPurchasePrice() +
+                    " Cash on cash return: " + p.getCashOnCashReturn() + "  Rating: " +
+                    p.isExpectedInvestmentMinAchieved() + " TOI % " + p.getInvestorTakeOutRate());
+        }
+
+        System.out.println("Done");
     }
 
 }
