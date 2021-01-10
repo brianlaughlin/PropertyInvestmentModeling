@@ -37,11 +37,11 @@ public class Testing {
         for (int i = 0; i < 100; i++) {
             Property p = new Property("Jacksonville");
             p.setPurchasePrice(purchasePrice);
-            purchasePrice = purchasePrice + 5000.00;
             p.setRehab(6000.00);
-            p.setRent(purchasePrice * 0.01);
             p.setPropertyManagementRate(0.08);
             properties.add(p);
+
+            purchasePrice = purchasePrice + 5000.00;
         }
 
         for (Property p : properties) {
