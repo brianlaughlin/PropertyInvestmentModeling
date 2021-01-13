@@ -59,12 +59,11 @@ public class Property extends Cities {
         return city.name;
     }
 
-    private void makeUpAddress() {
+    public void makeUpAddress() {
         this.street = StreetNameGenerator.generateAddress();
     }
 
     public Double getAnnualIncome() {
-
         return getMonthlyNetIncome() * 12;
     }
 

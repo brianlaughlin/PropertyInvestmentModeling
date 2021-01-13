@@ -15,4 +15,9 @@ public class PropertyForm {
 
         return "form";
     }
+
+    @RequestMapping(value = "ajax")
+    public String ajax(){
+        return "ajax";
+    }
 }
