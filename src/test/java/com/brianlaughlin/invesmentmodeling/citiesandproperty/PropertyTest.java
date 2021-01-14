@@ -61,19 +61,21 @@ public class PropertyTest {
     }
 
     @Test
-    public void getAnnualIncome(){
+    public void getAnnualIncome() {
         Assert.assertEquals(8529.0, p.getAnnualIncome(), 0.001);
     }
 
     @Test
-    public void getDownpayment(){
+    public void getDownpayment() {
         System.out.println("Purchase price - loan amount");
         Assert.assertEquals(30000.0, p.getDownpayment(), 0.001);
     }
 
     @Test
-    public void getEstimatedTakeoutExpenses(){
+    public void getEstimatedTakeoutExpenses() {
         System.out.println("EstimatedTakeoutExpenseRate * (purhcase price + rehab))");
-        Assert.assertEquals(3600.0, (p.estimatedTakeoutExpenseRate* (p.purchasePrice + p.rehab)), 0.001);
+        Assert.assertEquals(3600.0, (p.estimatedTakeoutExpenseRate * (p.purchasePrice + p.rehab)), 0.001);
     }
+
+
 }

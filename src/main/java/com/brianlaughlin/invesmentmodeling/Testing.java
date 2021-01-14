@@ -123,11 +123,11 @@ public class Testing {
         public void invoke() {
             int n = 0;
             int counter = 0;
-            while (n < 1000) {
+            while (n < 10) {
                 Property p = new Property("Jacksonville");
                 p.setPurchasePrice(rand.nextInt(110000) + 30000.0);
                 p.setRehab(rand.nextInt(30000) + 1.0);
-                p.setPropertyManagementRate(rand.nextInt(5) + 6.0);
+                p.setPropertyManagementRate((rand.nextInt(5) + 6.0)/ 100);
 //                p.setRent(rand.nextInt(1500) + 600.0);
                 int rentMultiplier = rand.nextInt(6);
                 Double rm = (rentMultiplier / 1000.0) + 0.014;
@@ -143,6 +143,12 @@ public class Testing {
 //                    System.out.println("Found one!");
                 System.out.println(p.getCashOnCashReturn());
                     n++;
+
+                    // Debugging
+                System.out.println(p);
+
+
+                // Debugging
 //                }
 //                System.out.println("Counter: " + counter + " and found: " + n);
             }
