@@ -9,8 +9,6 @@ import java.util.List;
 import java.util.Random;
 
 
-//TODO: getAnnualIncome will give a negative result at times. Need to fix this.
-
 public class Testing {
     public static void main(String[] args) {
 
@@ -30,7 +28,7 @@ public class Testing {
     }
 
     private static void printSeparator(String mesg) {
-        System.out.println("____________________"+mesg+"____________________");
+        System.out.println("____________________" + mesg + "____________________");
     }
 
     private static class FirstTest {
@@ -111,7 +109,7 @@ public class Testing {
                 System.out.println("Purchase price: " + p.getPurchasePrice() +
                         " Cash on cash return: " + p.getCashOnCashReturn() + "  Rating: " +
                         p.isExpectedInvestmentMinAchieved() + " TOI % " + p.getInvestorTakeOutRate()
-                        + " Rent: " + p.getRent());
+                        + " Rent: " + p.getRent() + " with a rent multiplier of " + p.getRentMultiplier());
             }
         }
     }
@@ -119,43 +117,38 @@ public class Testing {
     private static class FourthTest {
         private List<Property> properties = new ArrayList<>();
         Random rand = new Random();
+        Double minRentMultiplier = 10.0;
 
         public void invoke() {
             int n = 0;
             int counter = 0;
-            while (n < 10) {
+            while (n < 1000) {
                 Property p = new Property("Jacksonville");
                 p.setPurchasePrice(rand.nextInt(110000) + 30000.0);
                 p.setRehab(rand.nextInt(30000) + 1.0);
-                p.setPropertyManagementRate((rand.nextInt(5) + 6.0)/ 100);
-//                p.setRent(rand.nextInt(1500) + 600.0);
-                int rentMultiplier = rand.nextInt(6);
-                Double rm = (rentMultiplier / 1000.0) + 0.014;
-                System.out.println(rm);
+                p.setPropertyManagementRate((rand.nextInt(5) + 6.0) / 100);
+                int rentMultiplier = rand.nextInt(10);
+                Double rm = (rentMultiplier / 1000.0) + 0.01;
                 p.setRent(p.getPurchasePrice() * rm);
 
                 // Add an address
                 p.makeUpAddress();
                 counter++;
-//                if(p.isExpectedInvestmentMinAchieved())
-//                {
+                if (p.isExpectedInvestmentMinAchieved()) {
                     properties.add(p);
-//                    System.out.println("Found one!");
-                System.out.println(p.getCashOnCashReturn());
+                    System.out.println("Found one!");
+                    System.out.println(p.getCashOnCashReturn());
                     n++;
 
-                    // Debugging
-                System.out.println(p);
+                    if(p.getRentMultiplier() < minRentMultiplier) minRentMultiplier = p.getRentMultiplier();
+                }
 
+                ShowProperties showProperties;
+                new ShowProperties(properties).show();
 
-                // Debugging
-//                }
-//                System.out.println("Counter: " + counter + " and found: " + n);
+                System.out.println("Total properties simulated was " + counter);
+                System.out.println("The min Rent Multiplier is: " + minRentMultiplier);
             }
-
-
-            ShowProperties showProperties;
-            new ShowProperties(properties).show();
         }
     }
 }

@@ -35,6 +35,8 @@ public class Property extends Cities {
     Double takeOutCost = 0.0;
     Double padPercentage = 0.10;
 
+    // Rent ratio compared to purchase price
+    Double rentMultiplier = 0.0;
 
     public Property(String cityName, Double purchasePrice) {
         this.purchasePrice = purchasePrice;
@@ -103,5 +105,7 @@ public class Property extends Cities {
         return (this.purchasePrice + this.rehab) * padPercentage;
     }
 
-
+    public Double getRentMultiplier() {
+        return rent / purchasePrice;
+    }
 }
