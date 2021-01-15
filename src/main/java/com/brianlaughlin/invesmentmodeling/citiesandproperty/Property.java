@@ -8,8 +8,13 @@ public class Property extends Cities {
     static final Double INVESTOR_PERCENTAGE = 0.75; // 75%
     static final Double TEAM_PERCENTAGE = 0.25; // 25%
 
+    // Location
     String street;
     String zipcode;
+    String notes;
+    Integer neighborhoodRating;
+
+    // Financials
     Double rent = 0.0;
     Double propertyManagementRate = 0.1;
     Double loanAmount = 0.0;
@@ -18,13 +23,12 @@ public class Property extends Cities {
     Double vacancyRate = 0.0;
     Double hoa = 0.0;
     Double interestRate = 0.08; // 8%
-
     Double purchasePrice = 0.0;
-    String notes;
-    Integer neighborhoodRating;
+    Double estARV = 0.0;
 
     Double estimatedTakeoutExpenseRate = 0.10;
 
+    // Calculated Returns
     Double annualIncome = 0.0;
     Double monthlyNetIncome = 0.0;
     Double cashOnCashReturn = 0.0;
@@ -35,14 +39,23 @@ public class Property extends Cities {
     Double takeOutCost = 0.0;
     Double padPercentage = 0.10;
 
-    // Rent ratio compared to purchase price
-    Double rentMultiplier = 0.0;
+    Double rentMultiplier = 0.0; // Rent ratio compared to purchase price
+
 
     public Property(String cityName, Double purchasePrice) {
         this.purchasePrice = purchasePrice;
         setCityClassByName(cityName);
 
         makeUpAddress();
+    }
+
+    public Property(String street, String zipcode, Double rent, Double propertyManagementRate, Double rehab, Double purchasePrice) {
+        this.street = street;
+        this.zipcode = zipcode;
+        this.rent = rent;
+        this.propertyManagementRate = propertyManagementRate;
+        this.rehab = rehab;
+        this.purchasePrice = purchasePrice;
     }
 
     public Property(String cityName) {
