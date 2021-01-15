@@ -49,7 +49,8 @@ public class Property extends Cities {
         makeUpAddress();
     }
 
-    public Property(String street, String zipcode, Double rent, Double propertyManagementRate, Double rehab, Double purchasePrice) {
+    public Property(String cityName, String street, String zipcode, Double rent, Double propertyManagementRate, Double rehab, Double purchasePrice) {
+        setCityClassByName(cityName);
         this.street = street;
         this.zipcode = zipcode;
         this.rent = rent;
