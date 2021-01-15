@@ -41,6 +41,9 @@ public class Property extends Cities {
 
     Double rentMultiplier = 0.0; // Rent ratio compared to purchase price
 
+    Double annualDepreciation = 0.0;
+    Double annualDepreciationInvestorShare = 0.0;
+    Double cashOnCashReturnIncludingDepreciation = 0.0;
 
     public Property(String cityName, Double purchasePrice) {
         this.purchasePrice = purchasePrice;
@@ -97,6 +100,11 @@ public class Property extends Cities {
         return getAnnualIncome() / (rehab + getDownpayment() + (estimatedTakeoutExpenseRate * (purchasePrice + rehab)));
     }
 
+    public Double getCashOnCashReturnIncludingDepreciation() {
+
+        return (getAnnualIncome() + getAnnualDepreciation()) / (rehab + getDownpayment() + (estimatedTakeoutExpenseRate * (purchasePrice + rehab)));
+    }
+
     public Double getTotalMonthlyExpense() {
 
         return getPropertyTaxMontly() + hoa + getLoanPayment() + (getPropertyManagementRate() * rent);
@@ -106,9 +114,9 @@ public class Property extends Cities {
         return loanAmount * interestRate / 12;
     }
 
-    // Annual rent * 75% / Take ot cost
+    // Cash on Cash * 75% (Investor Percentage)
     public Double getInvestorTakeOutRate() {
-        return (this.rent * 12) * INVESTOR_PERCENTAGE / getTakeOutCost();
+        return getCashOnCashReturn() * INVESTOR_PERCENTAGE;
     }
 
     public Boolean isExpectedInvestmentMinAchieved() {
@@ -121,5 +129,14 @@ public class Property extends Cities {
 
     public Double getRentMultiplier() {
         return rent / purchasePrice;
+    }
+
+    // purchase price / 2 (for improvement value) / 27.5 years
+    public Double getAnnualDepreciation() {
+        return purchasePrice / 2 / 27.5;
+    }
+
+    public Double getAnnualDepreciationInvestorShare() {
+        return getAnnualDepreciation() * INVESTOR_PERCENTAGE;
     }
 }

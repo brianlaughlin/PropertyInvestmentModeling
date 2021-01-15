@@ -1,6 +1,7 @@
 package com.brianlaughlin.invesmentmodeling;
 
 import com.brianlaughlin.invesmentmodeling.citiesandproperty.Property;
+import com.brianlaughlin.invesmentmodeling.model.LoadRealProperties;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,9 +11,12 @@ import java.util.Random;
 public class Testing {
     public static void main(String[] args) {
 
-        new FourthTest().invoke();
+//        new FourthTest().invoke();
 
-        printSeparator("DONE");
+//        printSeparator("Random property generation");
+
+        new RealPropertyTest().invoke();
+
     }
 
     private static void printSeparator(String mesg) {
@@ -33,6 +37,7 @@ public class Testing {
                         " Cash on cash return: " + p.getCashOnCashReturn() + "  Rating: " +
                         p.isExpectedInvestmentMinAchieved() + " TOI % " + p.getInvestorTakeOutRate()
                         + " Rent: " + p.getRent() + " with a rent multiplier of " + p.getRentMultiplier());
+                System.out.println(p);
             }
         }
     }
@@ -73,5 +78,24 @@ public class Testing {
                 System.out.println("The min Rent Multiplier is: " + minRentMultiplier);
             }
         }
+    }
+
+    private static class RealPropertyTest {
+        LoadRealProperties loadRealProperties;
+        List<Property> properties;
+
+        public RealPropertyTest(){
+                loadRealProperties = new LoadRealProperties();
+                this.properties = loadRealProperties.getProperties();
+        }
+
+        public void invoke(){
+            ShowProperties showProperties;
+            new ShowProperties(properties).show();
+
+
+
+        }
+
     }
 }
