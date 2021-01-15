@@ -22,7 +22,7 @@ public class Property extends Cities {
     Double deferedMaintenance = 0.0;
     Double vacancyRate = 0.0;
     Double hoa = 0.0;
-    Double interestRate = 0.08; // 8%
+    Double interestRate = 0.085; // 8.5%
     Double purchasePrice = 0.0;
     Double estARV = 0.0;
 
