@@ -7,6 +7,7 @@ import lombok.Data;
 public class Property extends Cities {
     static final Double INVESTOR_PERCENTAGE = 0.75; // 75%
     static final Double TEAM_PERCENTAGE = 0.25; // 25%
+    CalculatedReturns calculatedReturns;
 
     // Location
     String street;
@@ -25,24 +26,10 @@ public class Property extends Cities {
     Double interestRate = 0.085; // 8.5%
     Double purchasePrice = 0.0;
     Double estARV = 0.0;
-
     Double estimatedTakeoutExpenseRate = 0.10;
-
-    // Calculated Returns
-    Double annualIncome = 0.0;
-    Double monthlyNetIncome = 0.0;
-    Double cashOnCashReturn = 0.0;
-
-    Double totalMonthlyExpense = 0.0;
-
-    Double takeOutInvestorRate = 0.0;
-    Double takeOutCost = 0.0;
     Double padPercentage = 0.10;
-
     Double rentMultiplier = 0.0; // Rent ratio compared to purchase price
 
-    Double annualDepreciation = 0.0;
-    Double annualDepreciationInvestorShare = 0.0;
     Double cashOnCashReturnIncludingDepreciation = 0.0;
 
     PropertyStatus status;
@@ -76,8 +63,6 @@ public class Property extends Cities {
         this.purchasePrice = purchasePrice;
         this.status = status;
     }
-
-
 
     public Property(String cityName) {
         setCityClassByName(cityName);
