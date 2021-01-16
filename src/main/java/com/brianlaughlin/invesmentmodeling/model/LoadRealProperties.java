@@ -20,7 +20,6 @@ public class LoadRealProperties {
             properties.add(property);
         }
     }
-//TODO: Finish properties with loans
 
     public List<Property> LoadRealPropertiesWithLoan() {
         Property p1 = new Property("Detroit", "19127 Tireman", "48228",750.0,0.08,9000.0,37000.0);
@@ -32,6 +31,8 @@ public class LoadRealProperties {
         for (Property property1 : Arrays.asList(p1, p2, p3, p4, p5)) {
             property1.setLoanAmount(p1.getPurchasePrice() * 0.75);
         }
+
+        properties.clear();
 
         for (Property property : Arrays.asList(p1, p2, p3, p4, p5)) {
             properties.add(property);

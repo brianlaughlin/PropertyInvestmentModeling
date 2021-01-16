@@ -15,10 +15,12 @@ public class Testing {
 
 //        printSeparator("Random property generation");
 
+
         new RealPropertyTest().invoke();
         printSeparator("With Loans");
 
         new RealPropertyTest().propertiesWithLoans();
+
 
     }
 
@@ -102,6 +104,8 @@ public class Testing {
             loadRealProperties = new LoadRealProperties();
             properties.clear();
             properties = loadRealProperties.LoadRealPropertiesWithLoan();
+
+            invoke();
         }
 
     }
