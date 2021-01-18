@@ -22,7 +22,7 @@ public class PropertySave {
             pe.setPurchasePrice(p.getPurchasePrice());
             pe.setRehab(p.getRehab());
             pe.setRent(p.getRent());
-            pe.setCashOnCachReturn(p.getCashOnCashReturn());
+            pe.setCashOnCashReturn(p.getCashOnCashReturn());
             pe.setEstARV(p.getEstARV());
             pe.setTakeOutCost(p.getTakeOutCost());
             pe.setTOIPercentage(p.getInvestorTakeOutRate());

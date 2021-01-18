@@ -2,6 +2,9 @@ package com.brianlaughlin.invesmentmodeling;
 
 import com.brianlaughlin.invesmentmodeling.citiesandproperty.Property;
 import com.brianlaughlin.invesmentmodeling.model.LoadRealProperties;
+import com.brianlaughlin.invesmentmodeling.model.PropertyExport;
+import com.brianlaughlin.invesmentmodeling.model.PropertySave;
+import org.apache.tomcat.util.digester.ArrayStack;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +24,11 @@ public class Testing {
 
         new RealPropertyTest().propertiesWithLoans();
 
+        // Testing PropertyExport
+        printSeparator("Testing PropertyExport Class");
+
+        new PropertyExportTest().invoke();
+
 
     }
 
@@ -31,18 +39,38 @@ public class Testing {
 
     private static class ShowProperties {
         private List<Property> properties;
+        private List<PropertyExport> propertyExports;
 
         public ShowProperties(List<Property> properties) {
             this.properties = properties;
         }
 
+        // String is so I can have a unique constructor
+        public ShowProperties(List<PropertyExport> propertyExports, String listName)
+        {
+            this.propertyExports = propertyExports;
+        }
+
+
         public void show() {
-            for (Property p : properties) {
-                System.out.println("Purchase price: " + p.getPurchasePrice() +
-                        " Cash on cash return: " + p.getCashOnCashReturn() + "  Rating: " +
-                        p.isExpectedInvestmentMinAchieved() + " TOI % " + p.getInvestorTakeOutRate()
-                        + " Rent: " + p.getRent() + " with a rent multiplier of " + p.getRentMultiplier());
-                System.out.println(p);
+
+
+            if (properties!=null) {
+                for (Property p : properties) {
+                    System.out.println("Purchase price: " + p.getPurchasePrice() +
+                            " Cash on cash return: " + p.getCashOnCashReturn() + "  Rating: " +
+                            p.isExpectedInvestmentMinAchieved() + " TOI % " + p.getInvestorTakeOutRate()
+                            + " Rent: " + p.getRent() + " with a rent multiplier of " + p.getRentMultiplier());
+                    System.out.println(p);
+                }
+            } else {
+                for (PropertyExport p : propertyExports) {
+                    System.out.println("Purchase price: " + p.getPurchasePrice() +
+                            " Cash on cash return: " + p.getCashOnCashReturn() + "  Rating: " +
+                            " TOI % " + p.getTOIPercentage()
+                            + " Rent: " + p.getRent() + " with a rent multiplier of ");
+                    System.out.println(p);
+                }
             }
         }
     }
@@ -108,5 +136,29 @@ public class Testing {
             invoke();
         }
 
+    }
+
+    private static class PropertyExportTest {
+        List<Property> properties = new ArrayStack<>();
+        List<PropertyExport> propertyExport = new ArrayList<>();
+        LoadRealProperties loadRealProperties;
+        PropertySave propertySave;
+
+        public PropertyExportTest() {
+            this.loadRealProperties = new LoadRealProperties();
+            this.properties = loadRealProperties.getProperties();
+            propertySave = new PropertySave(properties, propertyExport);
+        }
+
+        public List<PropertyExport> convert(){
+
+            propertyExport = propertySave.save();
+            return propertyExport;
+        }
+
+        public void invoke() {
+            ShowProperties showProperties;
+            new ShowProperties(properties).show();
+        }
     }
 }

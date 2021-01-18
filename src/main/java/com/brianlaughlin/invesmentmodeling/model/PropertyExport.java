@@ -11,7 +11,7 @@ public class PropertyExport {
     Double purchasePrice;
     Double rehab;
     Double rent;
-    Double cashOnCachReturn;
+    Double cashOnCashReturn;
     Double estARV;
     Double takeOutCost;
     Double TOIPercentage;
