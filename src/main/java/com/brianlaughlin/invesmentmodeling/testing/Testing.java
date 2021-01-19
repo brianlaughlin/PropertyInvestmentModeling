@@ -1,8 +1,8 @@
-package com.brianlaughlin.invesmentmodeling;
+package com.brianlaughlin.invesmentmodeling.testing;
 
 import com.brianlaughlin.invesmentmodeling.citiesandproperty.Property;
 import com.brianlaughlin.invesmentmodeling.csv.CsvPropertyWriter;
-import com.brianlaughlin.invesmentmodeling.model.LoadRealProperties;
+import com.brianlaughlin.invesmentmodeling.testing.LoadRealProperties;
 import com.brianlaughlin.invesmentmodeling.model.PropertyExport;
 import com.brianlaughlin.invesmentmodeling.model.PropertySave;
 import org.apache.tomcat.util.digester.ArrayStack;

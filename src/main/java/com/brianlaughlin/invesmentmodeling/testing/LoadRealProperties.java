@@ -1,4 +1,4 @@
-package com.brianlaughlin.invesmentmodeling.model;
+package com.brianlaughlin.invesmentmodeling.testing;
 
 import com.brianlaughlin.invesmentmodeling.citiesandproperty.Property;
 
