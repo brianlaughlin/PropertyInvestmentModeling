@@ -12,13 +12,13 @@ public class PropertyExport {
     String street;
     String city;
     String zipcode;
-    Double purchaseprice;
+    Double purchasePrice;
     Double rehab;
     Double rent;
-    Double cashoncashreturn;
-    Double estarv;
-    Double takeoutcost;
-    Double toipercentage;
+    Double cashOnCashReturn;
+    Double estArv;
+    Double takeoutCost;K
+    Double toiPercentage;
     String status;
 
 }

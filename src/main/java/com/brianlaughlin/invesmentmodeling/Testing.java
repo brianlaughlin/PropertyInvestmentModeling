@@ -71,9 +71,9 @@ public class Testing {
                 }
             } else {
                 for (PropertyExport p : propertyExports) {
-                    System.out.println("Purchase price: " + p.getPurchaseprice() +
-                            " Cash on cash return: " + p.getCashoncashreturn() + "  Rating: " +
-                            " TOI % " + p.getToipercentage()
+                    System.out.println("Purchase price: " + p.getPurchasePrice() +
+                            " Cash on cash return: " + p.getCashOnCashReturn() + "  Rating: " +
+                            " TOI % " + p.getToiPercentage()
                             + " Rent: " + p.getRent() + " with a rent multiplier of ");
                     System.out.println(p);
                 }
