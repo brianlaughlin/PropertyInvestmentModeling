@@ -17,7 +17,7 @@ public class PropertyExport {
     Double rent;
     Double cashOnCashReturn;
     Double estArv;
-    Double takeoutCost;K
+    Double takeoutCost;
     Double toiPercentage;
     String status;
 
