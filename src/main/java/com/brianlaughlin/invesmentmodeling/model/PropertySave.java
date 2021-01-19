@@ -19,14 +19,16 @@ public class PropertySave {
             pe.setStreet(p.getStreet());
             pe.setCity(p.getCityName());
             pe.setZipcode(p.getZipcode());
-            pe.setPurchasePrice(p.getPurchasePrice());
+            pe.setPurchaseprice(p.getPurchasePrice());
             pe.setRehab(p.getRehab());
             pe.setRent(p.getRent());
-            pe.setCashOnCashReturn(p.getCashOnCashReturn());
-            pe.setEstARV(p.getEstARV());
-            pe.setTakeOutCost(p.getTakeOutCost());
-            pe.setTOIPercentage(p.getInvestorTakeOutRate());
+            pe.setCashoncashreturn(p.getCashOnCashReturn());
+            pe.setEstarv(p.getEstARV());
+            pe.setTakeoutcost(p.getTakeOutCost());
+            pe.setToipercentage(p.getInvestorTakeOutRate());
             pe.setStatus(String.valueOf(p.getStatus()));
+
+            propertyExports.add(pe);
 
         }
 

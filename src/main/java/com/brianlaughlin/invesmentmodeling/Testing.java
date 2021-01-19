@@ -1,11 +1,13 @@
 package com.brianlaughlin.invesmentmodeling;
 
 import com.brianlaughlin.invesmentmodeling.citiesandproperty.Property;
+import com.brianlaughlin.invesmentmodeling.csv.CsvPropertyWriter;
 import com.brianlaughlin.invesmentmodeling.model.LoadRealProperties;
 import com.brianlaughlin.invesmentmodeling.model.PropertyExport;
 import com.brianlaughlin.invesmentmodeling.model.PropertySave;
 import org.apache.tomcat.util.digester.ArrayStack;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -27,7 +29,11 @@ public class Testing {
         // Testing PropertyExport
         printSeparator("Testing PropertyExport Class");
 
-        new PropertyExportTest().invoke();
+        try {
+            new PropertyExportTest().invoke();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
 
     }
@@ -65,9 +71,9 @@ public class Testing {
                 }
             } else {
                 for (PropertyExport p : propertyExports) {
-                    System.out.println("Purchase price: " + p.getPurchasePrice() +
-                            " Cash on cash return: " + p.getCashOnCashReturn() + "  Rating: " +
-                            " TOI % " + p.getTOIPercentage()
+                    System.out.println("Purchase price: " + p.getPurchaseprice() +
+                            " Cash on cash return: " + p.getCashoncashreturn() + "  Rating: " +
+                            " TOI % " + p.getToipercentage()
                             + " Rent: " + p.getRent() + " with a rent multiplier of ");
                     System.out.println(p);
                 }
@@ -148,6 +154,7 @@ public class Testing {
             this.loadRealProperties = new LoadRealProperties();
             this.properties = loadRealProperties.getProperties();
             propertySave = new PropertySave(properties, propertyExport);
+
         }
 
         public List<PropertyExport> convert(){
@@ -156,9 +163,14 @@ public class Testing {
             return propertyExport;
         }
 
-        public void invoke() {
-            ShowProperties showProperties;
-            new ShowProperties(properties).show();
+        public void invoke() throws IOException {
+//            ShowProperties showProperties;
+//            new ShowProperties(convert(), "exportlist").show();
+
+            CsvPropertyWriter writer = new CsvPropertyWriter("properties.csv", convert());
+            writer.write();
+            System.out.println("File written to drive");
+
         }
     }
 }

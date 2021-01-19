@@ -1,20 +1,24 @@
 package com.brianlaughlin.invesmentmodeling.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor  // Not sure if I need this
 public class PropertyExport {
 
     String street;
     String city;
     String zipcode;
-    Double purchasePrice;
+    Double purchaseprice;
     Double rehab;
     Double rent;
-    Double cashOnCashReturn;
-    Double estARV;
-    Double takeOutCost;
-    Double TOIPercentage;
+    Double cashoncashreturn;
+    Double estarv;
+    Double takeoutcost;
+    Double toipercentage;
     String status;
 
 }
