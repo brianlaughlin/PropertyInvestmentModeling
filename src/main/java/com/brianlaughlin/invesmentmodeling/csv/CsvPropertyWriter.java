@@ -12,17 +12,25 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
-/*
-https://www.codejava.net/coding/super-csv-writing-pojos-to-csv-file-using-csvbeanwriter
- */
-
 public class CsvPropertyWriter {
 
     String csvFileName;
     List<PropertyExport> properties;
 
     ICsvBeanWriter beanWriter = null;
-
+    CellProcessor[] processor = new CellProcessor[]{
+            new NotNull(),      // Address
+            new NotNull(),      // City
+            new NotNull(),      // Zip
+            new ParseDouble(),  // Price
+            new ParseDouble(),  // Rehab
+            new ParseDouble(),  // Rent
+            new ParseDouble(),  // Gross %
+            new ParseDouble(),  // Est ARV
+            new ParseDouble(),  // Take out cost
+            new ParseDouble(),  // TOI Gross %
+            new NotNull()      // Status
+    };
 
     public CsvPropertyWriter(String csvFileName, List<PropertyExport> properties) throws IOException {
         this.csvFileName = csvFileName;
@@ -31,20 +39,8 @@ public class CsvPropertyWriter {
 
 
     public void write() throws IOException {
-        CellProcessor[] processor = new CellProcessor[]{
-                new NotNull(),      // Address
-                new NotNull(),      // City
-                new NotNull(),      // Zip
-                new ParseDouble(),  // Price
-                new ParseDouble(),  // Rehab
-                new ParseDouble(),  // Rent
-                new ParseDouble(),  // Gross %
-                new ParseDouble(),  // Est ARV
-                new ParseDouble(),  // Take out cost
-                new ParseDouble(),  // TOI Gross %
-                new NotNull()      // Status
-        };
-        beanWriter = new CsvBeanWriter(new FileWriter("working.csv"), CsvPreference.STANDARD_PREFERENCE);
+
+        beanWriter = new CsvBeanWriter(new FileWriter(csvFileName), CsvPreference.STANDARD_PREFERENCE);
         String[] header = {"street", "city", "zipcode", "purchaseprice", "rehab", "rent", "cashoncashreturn", "estarv", "takeoutcost", "toipercentage", "status"};
         beanWriter.writeHeader(header);
 
