@@ -7,7 +7,6 @@ import lombok.Data;
 public class Property extends Cities {
     static final Double INVESTOR_PERCENTAGE = 0.75; // 75%
     static final Double TEAM_PERCENTAGE = 0.25; // 25%
-    CalculatedReturns calculatedReturns;
 
     // Location
     String street;
