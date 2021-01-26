@@ -30,8 +30,16 @@ public class LoadRealProperties {
                 0.08, 11000.0, 49000.0, OFFER_MADE);
         Property p9 = new Property("Jacksonville", "1832 Jones St", "32206", 750.0,
                 0.08, 12000.0, 39000.0, OFFER_MADE);
+        Property p10 = new Property("Detroit", "17364 Asbury Park", "48235", 850.0,
+                0.08, 2000.0, 41000.0, ESCROW);
+        Property p11 = new Property("Detroit", "11446 Kennebec St", "48205", 700.0,
+                0.08, 3000.0, 35000.0, ESCROW);
+        Property p12 = new Property("Detroit", "20153 Stoepel", "48221", 700.0,
+                0.08, 3000.0, 35000.0, ESCROW);
+        Property p13 = new Property("Detroit", "9951 Sussex St", "48227", 800.0,
+                0.08, 3000.0, 38000.0, ESCROW);
 
-        for (Property property : Arrays.asList(p1, p2, p3, p4, p5, p6, p7, p8, p9)) {
+        for (Property property : Arrays.asList(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13)) {
             properties.add(property);
         }
     }
