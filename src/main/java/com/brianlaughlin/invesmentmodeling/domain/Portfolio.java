@@ -19,6 +19,7 @@ public class Portfolio {
     // Location
     String street;
     String zipcode;
+    String city;
     String notes;
     Integer neighborhoodRating;
 
@@ -30,7 +31,21 @@ public class Portfolio {
     Double deferedMaintenance = 0.0;
     Double vacancyRate = 0.0;
     Double hoa = 0.0;
-    Double interestRate = 0.085; // 8.5%
+    Double interestRate = 0.08; // 8.0%
     Double purchasePrice = 0.0;
     Double estARV = 0.0;
+
+    public Portfolio(Double rent, Double rehab, Double hoa, Double purchasePrice, String city) {
+        this.rent = rent;
+        this.rehab = rehab;
+        this.hoa = hoa;
+        this.purchasePrice = purchasePrice;
+        this.city = city;
+    }
+
+    public Portfolio(Double purchasePrice) {
+        this.purchasePrice = purchasePrice;
+    }
+
+
 }
