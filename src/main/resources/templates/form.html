@@ -29,26 +29,27 @@
         <ul>
 
             <li>
-                <label class="description" for="element_11">Date </label>
+                <label class="description" for="element_1">Date </label>
                 <div>
-                    <input id="element_11" name="element_11"
-                    class="element date medium" type="date" value=""/>
+                    <input id="element_1" name="element_1"
+                           th:field="*{date}"
+                           class="element date medium" type="date" value=""/>
                 </div>
             </li>
             <li>
-                <label class="description" for="element_1">Address </label>
+                <label class="description" for="element_2">Address </label>
                 <div>
-                    <input id="element_1" name="element_1"
-
+                    <input id="element_2" name="element_2"
+                           th:field="*{street}"
                            class="element text medium" type="text" maxlength="255" value=""/>
                 </div>
             </li>
-            <li id="li_5">
-                <label class="description" for="element_5">City </label>
+            <li>
+                <label class="description" for="element_3">City </label>
                 <div>
-                    <select class="element select medium" id="element_5"
+                    <select class="element select medium" id="element_3"
                             th:field="*{city}"
-                            name="element_5">
+                            name="element_3">
                         <option value="" selected="selected"></option>
                         <option value="1">Detroit</option>
                         <option value="2">Jacksonvill</option>
@@ -57,50 +58,50 @@
                 </div>
             </li>
             <li>
-                <label class="description" for="element_1">Zip </label>
+                <label class="description" for="element_4">Zip </label>
                 <div>
-                    <input id="element_1" name="element_1"
-
+                    <input id="element_4" name="element_4"
+                           th:field="*{zipcode}"
                            class="element text medium" type="text" maxlength="5" value=""/>
                 </div>
             </li>
             <li>
-                <label class="description" for="element_1">Purchase Price </label>
+                <label class="description" for="element_5">Purchase Price </label>
                 <div>
-                    <input id="element_1" name="element_1"
+                    <input id="element_5" name="element_5"
                            th:field="*{purchasePrice}"
                            class="element text medium" type="text" maxlength="255" value=""/>
                 </div>
             </li>
-            <li id="li_4">
-                <label class="description" for="element_4">Repair Cost </label>
+            <li>
+                <label class="description" for="element_6">Repair Cost </label>
                 <div>
-                    <input id="element_4" name="element_4"
+                    <input id="element_6" name="element_6"
                            th:field="*{rehab}"
                            class="element text medium" type="text" maxlength="255" value=""/>
                 </div>
             </li>
-            <li id="li_2">
-                <label class="description" for="element_2">Rent </label>
+            <li>
+                <label class="description" for="element_7">Rent </label>
                 <div>
-                    <input id="element_2" name="element_2"
+                    <input id="element_7" name="element_7"
                            th:field="*{rent}"
                            class="element text medium" type="text" maxlength="255" value=""/>
                 </div>
             </li>
-            <li id="li_3">
-                <label class="description" for="element_3">ARV </label>
+            <li>
+                <label class="description" for="element_8">ARV </label>
                 <div>
-                    <input id="element_3" name="element_3"
-
+                    <input id="element_8" name="element_8"
+                            th:field="*{estARV}"
                            class="element text medium" type="text" maxlength="255" value=""/>
                 </div>
             </li>
 
-            <li id="li_3">
-                <label class="description" for="element_3">HOA </label>
+            <li>
+                <label class="description" for="element_9">HOA </label>
                 <div>
-                    <input id="element_3" name="element_3"
+                    <input id="element_9" name="element_9"
                            th:field="*{hoa}"
                            class="element text medium" type="text" maxlength="255" value=""/>
                 </div>

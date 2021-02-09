@@ -92,6 +92,11 @@ public class Property extends Cities {
         return rent - getTotalMonthlyExpense();
     }
 
+    public Double getAnnualNetIncome(){
+
+        return getMonthlyNetIncome() * 12;
+    }
+
     public Double getDownpayment() {
         return purchasePrice - loanAmount;
     }

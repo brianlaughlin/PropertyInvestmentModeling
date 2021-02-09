@@ -2,10 +2,9 @@ package com.brianlaughlin.invesmentmodeling.domain;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @NoArgsConstructor
@@ -16,6 +15,12 @@ public class Portfolio {
     @GeneratedValue
     private Long id;
 
+    @Basic
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private java.util.Date date;
+
+
     // Location
     String street;
     String zipcode;
@@ -25,7 +30,7 @@ public class Portfolio {
 
     // Financials
     Double rent = 0.0;
-    Double propertyManagementRate = 0.1;
+    Double propertyManagementRate = 0.08;
     Double loanAmount = 0.0;
     Double rehab = 0.0;
     Double deferedMaintenance = 0.0;
@@ -34,18 +39,5 @@ public class Portfolio {
     Double interestRate = 0.08; // 8.0%
     Double purchasePrice = 0.0;
     Double estARV = 0.0;
-
-    public Portfolio(Double rent, Double rehab, Double hoa, Double purchasePrice, String city) {
-        this.rent = rent;
-        this.rehab = rehab;
-        this.hoa = hoa;
-        this.purchasePrice = purchasePrice;
-        this.city = city;
-    }
-
-    public Portfolio(Double purchasePrice) {
-        this.purchasePrice = purchasePrice;
-    }
-
 
 }
