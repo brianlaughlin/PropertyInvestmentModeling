@@ -30,14 +30,12 @@ public class CalcCapRate implements Calculator {
      * @param property
      * @return
      */
-
     public double calcWithMaintenance(Property property) {
 
         return ((property.getAnnualNetIncome() - (property.getRent() * 12 * estMaintenanceRate)) /
                 (getInvestment(property)));
 
     }
-
 
     public void setEstMaintenanceRate(double estMaintenanceRate) {
         this.estMaintenanceRate = estMaintenanceRate;
