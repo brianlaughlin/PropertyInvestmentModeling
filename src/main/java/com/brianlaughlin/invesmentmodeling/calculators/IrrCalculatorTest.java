@@ -63,10 +63,10 @@ public class IrrCalculatorTest {
 
     private static void testNetIncome(){
         Property property = new Property("Detroit", "15639 Fairmount Dr", "48205", 750.0, 0.08, 6500.0, 29000.0);
-        Calculator c = new CalcCapRate();
+        CalcCapRate c = new CalcCapRate();
         System.out.println("Cap Rate: " + c.calc(property));
 
-//        System.out.println("Cap Rate with Maintenace: " + c.calcWithMaintenance(property));
+        System.out.println("Cap Rate with Maintenace: " + c.calcWithMaintenance(property));
 
     }
 
