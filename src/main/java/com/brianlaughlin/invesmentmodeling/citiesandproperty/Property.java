@@ -55,6 +55,7 @@ public class Property extends Cities {
         this.purchasePrice = purchasePrice;
     }
 
+    // Use for constrction rehab estimates
     public Property(String cityName, String street, String zipcode, Double rent, Double propertyManagementRate,
                     Double purchasePrice, RehabState rehabState, int interiorSqft) {
         setCityClassByName(cityName);
