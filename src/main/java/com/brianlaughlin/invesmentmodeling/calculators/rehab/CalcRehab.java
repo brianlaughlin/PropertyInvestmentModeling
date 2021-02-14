@@ -5,9 +5,12 @@ import com.brianlaughlin.invesmentmodeling.citiesandproperty.Property;
 import com.brianlaughlin.invesmentmodeling.citiesandproperty.RehabState;
 
 public class CalcRehab implements Calculator {
+
+    Property property;
+
     @Override
     public double calc(Object o) {
-        Property property = (Property) o;
+        property = (Property) o;
 
         return checkRehabEstimate(property.getInteriorSqft(), property.getRehabState());
     }
@@ -40,6 +43,26 @@ public class CalcRehab implements Calculator {
                 result = 0.0;
         }
 
+        return result;
+    }
+
+    // Estimates provided by Mac Major
+    public Double calcMacMajor() {
+        Double result = 0.0;
+
+        switch (property.getRehabState()){
+            case LIGHT:
+                result = 20.0 * property.getInteriorSqft();
+                break;
+            case AVERAGE:
+                result = 30.0 * property.getInteriorSqft();
+                break;
+            case HEAVY:
+                result = 35.0 * property.getInteriorSqft();
+                break;
+            default:
+                result = 0.0;
+        }
         return result;
     }
 }
