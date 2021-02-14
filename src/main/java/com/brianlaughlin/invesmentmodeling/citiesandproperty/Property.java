@@ -56,13 +56,12 @@ public class Property extends Cities {
     }
 
     public Property(String cityName, String street, String zipcode, Double rent, Double propertyManagementRate,
-                    Double rehab, Double purchasePrice, RehabState rehabState, int interiorSqft) {
+                    Double purchasePrice, RehabState rehabState, int interiorSqft) {
         setCityClassByName(cityName);
         this.street = street;
         this.zipcode = zipcode;
         this.rent = rent;
         this.propertyManagementRate = propertyManagementRate;
-        this.rehab = rehab;
         this.purchasePrice = purchasePrice;
         this.rehabState = rehabState;
         this.interiorSqft = interiorSqft;
