@@ -6,5 +6,6 @@ public class Detroit extends City{
         taxRate = 0.0269;  // 2.69%
         state = "MI";
         investmentReturnMinimum = 0.14;
+        defaultRehab = 3000.0;
     }
 }

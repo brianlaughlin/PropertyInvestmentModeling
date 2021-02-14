@@ -6,5 +6,6 @@ public class Lansing extends City {
         taxRate = 0.0152;
         state = "MI";
         investmentReturnMinimum = 0.12;
+        defaultRehab = 3000.0;
     }
 }

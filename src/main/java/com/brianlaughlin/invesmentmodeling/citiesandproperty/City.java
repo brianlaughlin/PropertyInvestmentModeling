@@ -7,5 +7,6 @@ public abstract class City {
     Double taxRate;
     String state;
     Double investmentReturnMinimum;
+    Double defaultRehab; // To accomodate unknown rehab amounts
 
 }

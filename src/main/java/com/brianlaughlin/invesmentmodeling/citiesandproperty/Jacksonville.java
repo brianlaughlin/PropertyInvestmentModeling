@@ -6,5 +6,6 @@ public class Jacksonville extends City {
         taxRate = 0.0101; // 1.01%
         state = "FL";
         investmentReturnMinimum = 0.12;
+        defaultRehab = 8000.0;
     }
 }
