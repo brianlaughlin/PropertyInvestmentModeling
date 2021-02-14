@@ -20,12 +20,19 @@ public class CalcRehabTest {
         CalcRehab rehabCalculator = new CalcRehab();
         rehabCalculator.calc(p);
         Assert.assertEquals(10000.0, rehabCalculator.calc(p), 0.001);
+        compareRehabMethods(rehabCalculator);
 
         p.setRehabState(RehabState.AVERAGE);
         Assert.assertEquals(25000.0, rehabCalculator.calc(p), 0.001);
+        compareRehabMethods(rehabCalculator);
 
         p.setRehabState(RehabState.HEAVY);
         Assert.assertEquals(50000.0, rehabCalculator.calc(p), 0.001);
+        compareRehabMethods(rehabCalculator);
+    }
+
+    private void compareRehabMethods(CalcRehab rehabCalculator) {
+        System.out.println("Mac Major estimates are: " + rehabCalculator.calcMacMajor() + " vs " + rehabCalculator.calc(p));
     }
 
     @Test
@@ -35,12 +42,15 @@ public class CalcRehabTest {
         CalcRehab rehabCalculator = new CalcRehab();
         rehabCalculator.calc(p);
         Assert.assertEquals(15000.0, rehabCalculator.calc(p), 0.001);
+        compareRehabMethods(rehabCalculator);
 
         p.setRehabState(RehabState.AVERAGE);
         Assert.assertEquals(35000.0, rehabCalculator.calc(p), 0.001);
+        compareRehabMethods(rehabCalculator);
 
         p.setRehabState(RehabState.HEAVY);
         Assert.assertEquals(75000.0, rehabCalculator.calc(p), 0.001);
+        compareRehabMethods(rehabCalculator);
     }
 
 }
