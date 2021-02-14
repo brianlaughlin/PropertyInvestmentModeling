@@ -32,6 +32,7 @@ public class Property extends Cities {
     Double cashOnCashReturnIncludingDepreciation = 0.0;
 
     PropertyStatus status;
+    RehabState rehabState;
 
     public Property(String cityName, Double purchasePrice) {
         this.purchasePrice = purchasePrice;
@@ -40,7 +41,8 @@ public class Property extends Cities {
         makeUpAddress();
     }
 
-    public Property(String cityName, String street, String zipcode, Double rent, Double propertyManagementRate, Double rehab, Double purchasePrice) {
+    public Property(String cityName, String street, String zipcode, Double rent, Double propertyManagementRate,
+                    Double rehab, Double purchasePrice) {
         setCityClassByName(cityName);
         this.street = street;
         this.zipcode = zipcode;
@@ -48,6 +50,18 @@ public class Property extends Cities {
         this.propertyManagementRate = propertyManagementRate;
         this.rehab = rehab;
         this.purchasePrice = purchasePrice;
+    }
+
+    public Property(String cityName, String street, String zipcode, Double rent, Double propertyManagementRate,
+                    Double rehab, Double purchasePrice, RehabState rehabState) {
+        setCityClassByName(cityName);
+        this.street = street;
+        this.zipcode = zipcode;
+        this.rent = rent;
+        this.propertyManagementRate = propertyManagementRate;
+        this.rehab = rehab;
+        this.purchasePrice = purchasePrice;
+        this.rehabState = rehabState;
     }
 
     public Property(String cityName, String street, String zipcode, Double rent,
