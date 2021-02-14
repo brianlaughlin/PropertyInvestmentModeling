@@ -11,6 +11,9 @@ public class Cities {
             case "Jacksonville":
                 this.city = new Jacksonville();
                 break;
+            case "Lansing":
+                this.city = new Lansing();
+                break;
         }
     }
 }
