@@ -30,7 +30,9 @@ public class Property extends Cities {
     Double rentMultiplier = 0.0; // Rent ratio compared to purchase price
 
     Double cashOnCashReturnIncludingDepreciation = 0.0;
-    Double interiorSqft = 0.0;
+
+    // Features
+    int interiorSqft = 0;
 
     PropertyStatus status;
     RehabState rehabState;
@@ -54,7 +56,7 @@ public class Property extends Cities {
     }
 
     public Property(String cityName, String street, String zipcode, Double rent, Double propertyManagementRate,
-                    Double rehab, Double purchasePrice, RehabState rehabState, Double interiorSqft) {
+                    Double rehab, Double purchasePrice, RehabState rehabState, int interiorSqft) {
         setCityClassByName(cityName);
         this.street = street;
         this.zipcode = zipcode;
