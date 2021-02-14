@@ -4,10 +4,6 @@ package com.brianlaughlin.invesmentmodeling.calculators;
 import com.brianlaughlin.invesmentmodeling.citiesandproperty.Property;
 import org.apache.poi.ss.formula.functions.Irr;
 
-/*
-The library is so complete I don't think I need to do much here. I should just add this functionality to another class.
-TODO: add this call to another class
- */
 public class IrrCalculatorTest {
 
     public static void main(String[] args) {
