@@ -1,4 +1,6 @@
-package com.brianlaughlin.invesmentmodeling.citiesandproperty;
+package com.brianlaughlin.invesmentmodeling.citiesandproperty.michigan;
+
+import com.brianlaughlin.invesmentmodeling.citiesandproperty.City;
 
 public class Lansing extends City {
     public Lansing() {

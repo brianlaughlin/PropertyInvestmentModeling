@@ -1,4 +1,6 @@
-package com.brianlaughlin.invesmentmodeling.citiesandproperty;
+package com.brianlaughlin.invesmentmodeling.citiesandproperty.florida;
+
+import com.brianlaughlin.invesmentmodeling.citiesandproperty.City;
 
 public class Jacksonville extends City {
     public Jacksonville() {

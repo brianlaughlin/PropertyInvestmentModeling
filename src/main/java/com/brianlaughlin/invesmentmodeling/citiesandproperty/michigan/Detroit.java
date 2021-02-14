@@ -1,6 +1,8 @@
-package com.brianlaughlin.invesmentmodeling.citiesandproperty;
+package com.brianlaughlin.invesmentmodeling.citiesandproperty.michigan;
 
-public class Detroit extends City{
+import com.brianlaughlin.invesmentmodeling.citiesandproperty.City;
+
+public class Detroit extends City {
     public Detroit() {
         name = "Detroit";
         taxRate = 0.0269;  // 2.69%

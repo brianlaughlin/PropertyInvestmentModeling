@@ -3,10 +3,10 @@ package com.brianlaughlin.invesmentmodeling.citiesandproperty;
 import lombok.Data;
 
 public abstract class City {
-    String name;
-    Double taxRate;
-    String state;
-    Double investmentReturnMinimum;
-    Double defaultRehab; // To accomodate unknown rehab amounts
+    public String name;
+    public Double taxRate;
+    public String state;
+    public Double investmentReturnMinimum;
+    public Double defaultRehab; // To accomodate unknown rehab amounts
 
 }
