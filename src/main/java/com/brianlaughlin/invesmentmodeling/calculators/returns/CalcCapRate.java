@@ -1,5 +1,6 @@
-package com.brianlaughlin.invesmentmodeling.calculators;
+package com.brianlaughlin.invesmentmodeling.calculators.returns;
 
+import com.brianlaughlin.invesmentmodeling.calculators.Calculator;
 import com.brianlaughlin.invesmentmodeling.citiesandproperty.Property;
 
 public class CalcCapRate implements Calculator {
