@@ -9,7 +9,7 @@ import java.util.List;
 import static com.brianlaughlin.invesmentmodeling.citiesandproperty.PropertyStatus.*;
 
 public class LoadRealProperties {
-    List<Property> properties = new ArrayList<>();
+    final List<Property> properties = new ArrayList<>();
 
     public LoadRealProperties() {
         Property p1 = new Property("Detroit", "19127 Tireman", "48228", 750.0,
@@ -39,9 +39,7 @@ public class LoadRealProperties {
         Property p13 = new Property("Detroit", "9951 Sussex St", "48227", 800.0,
                 0.08, 3000.0, 38000.0, ESCROW);
 
-        for (Property property : Arrays.asList(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13)) {
-            properties.add(property);
-        }
+        properties.addAll(Arrays.asList(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13));
     }
 
     public List<Property> LoadRealPropertiesWithLoan() {
@@ -65,9 +63,7 @@ public class LoadRealProperties {
 
         properties.clear();
 
-        for (Property property : Arrays.asList(p1, p2, p3, p4, p5, p6, p7, p8, p9)) {
-            properties.add(property);
-        }
+        properties.addAll(Arrays.asList(p1, p2, p3, p4, p5, p6, p7, p8, p9));
 
         return properties;
     }

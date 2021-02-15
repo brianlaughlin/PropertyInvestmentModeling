@@ -15,11 +15,9 @@ public class UserService {
     // Love Java 8
     public List<User> findByUserNameOrEmail(String username) {
 
-        List<User> result = users.stream()
+        return users.stream()
                 .filter(x -> x.getUsername().equalsIgnoreCase(username))
                 .collect(Collectors.toList());
-
-        return result;
 
     }
 
@@ -27,7 +25,7 @@ public class UserService {
     @PostConstruct
     private void iniDataForTesting() {
 
-        users = new ArrayList<User>();
+        users = new ArrayList<>();
 
         User user1 = new User("mkyong", "password111", "mkyong@yahoo.com");
         User user2 = new User("yflow", "password222", "yflow@yahoo.com");

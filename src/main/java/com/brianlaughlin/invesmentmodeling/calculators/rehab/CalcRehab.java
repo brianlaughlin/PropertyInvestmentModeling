@@ -16,7 +16,7 @@ public class CalcRehab implements Calculator {
     }
 
     private Double checkRehabEstimate(int interiorSqft, RehabState rehabState) {
-        Double result = 0.0;
+        double result = 0.0;
         switch (rehabState) {
             case LIGHT:
                 if (interiorSqft <= 1500) result = 10000.0;
@@ -48,7 +48,7 @@ public class CalcRehab implements Calculator {
 
     // Estimates provided by Mac Major
     public Double calcMacMajor() {
-        Double result = 0.0;
+        double result;
 
         switch (property.getRehabState()){
             case LIGHT:

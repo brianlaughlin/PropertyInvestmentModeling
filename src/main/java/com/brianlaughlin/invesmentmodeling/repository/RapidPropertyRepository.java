@@ -39,8 +39,8 @@ public interface RapidPropertyRepository extends JpaRepository<RapidProperty, Lo
 				" and (JSON_EXTRACT(jsondata ,  '$.price') <= :maxprice  or :maxprice = -1)" +
 				" and listingid not in :listingid" +
 				"",nativeQuery = true)
-		public Integer  deleteBySerachParam(@Param("city")String city,@Param("statecode")String statecode,@Param("postalcode")Integer postalcode,@Param("minbed")Integer minbed,@Param("proptype")List<String> proptype,@Param("minprice")Integer minprice,
-										 @Param("maxprice")Integer maxprice,@Param("minsqft")Integer minsqft,@Param("listingid")List<String> listingid);
+		Integer  deleteBySerachParam(@Param("city") String city, @Param("statecode") String statecode, @Param("postalcode") Integer postalcode, @Param("minbed") Integer minbed, @Param("proptype") List<String> proptype, @Param("minprice") Integer minprice,
+									 @Param("maxprice") Integer maxprice, @Param("minsqft") Integer minsqft, @Param("listingid") List<String> listingid);
 	    
 	    
 	    @Query(value=""
@@ -73,17 +73,17 @@ public interface RapidPropertyRepository extends JpaRepository<RapidProperty, Lo
 	    		"  group by rp.mlsid "+
 	    		"  order by percentage_return desc"
 	    		,nativeQuery = true)
-		public List<Object[]> getJsonData(@Param("splitBy")Integer splitBy);
+		List<Object[]> getJsonData(@Param("splitBy") Integer splitBy);
 
 		 @Modifying(clearAutomatically = true)
 		 @Transactional
 		 @Query(value="update  retsdata.rentometer_data set overridden_rent=:rentvalue where bed_summary = :bedsummary and zipcode = :zipcode",nativeQuery = true)
-		 public void updateRentByPostalcodeAndBedsummary(@Param("zipcode")String zipcode, @Param("bedsummary")String bedsummary, @Param("rentvalue")String rentvalue);
+		 void updateRentByPostalcodeAndBedsummary(@Param("zipcode") String zipcode, @Param("bedsummary") String bedsummary, @Param("rentvalue") String rentvalue);
 
 	    
-	    public RapidProperty findByListingid(String listingid);
+	    RapidProperty findByListingid(String listingid);
 
 	    @Query(value="Select configvalue from rapidpropertyconfig where configname = :configname", nativeQuery = true)
-	    public Object getRapidConfigConfiguration(@Param("configname")String configname);
+		Object getRapidConfigConfiguration(@Param("configname") String configname);
 
 }

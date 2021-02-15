@@ -1,9 +1,7 @@
 package com.brianlaughlin.invesmentmodeling.calculators.returns;
 
-//https://poi.apache.org/apidocs/dev/org/apache/poi/ss/formula/functions/Irr.html
+// TODO: Move this to a test class
 import com.brianlaughlin.invesmentmodeling.calculators.Calculator;
-import com.brianlaughlin.invesmentmodeling.calculators.returns.CalcCapRate;
-import com.brianlaughlin.invesmentmodeling.calculators.returns.CalcIRR;
 import com.brianlaughlin.invesmentmodeling.citiesandproperty.Property;
 import org.apache.poi.ss.formula.functions.Irr;
 

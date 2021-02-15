@@ -13,7 +13,7 @@ $(document).ready(function () {
 
 function fire_ajax_submit() {
 
-    var search = {}
+    let search = {}
     search["username"] = $("#username").val();
 
     $("#btn-search").prop("disabled", true);
@@ -28,7 +28,7 @@ function fire_ajax_submit() {
         timeout: 600000,
         success: function (data) {
 
-            var json = "<h4>Ajax Response</h4>&lt;pre&gt;"
+            let json = "<h4>Ajax Response</h4>&lt;pre&gt;"
                 + JSON.stringify(data, null, 4) + "&lt;/pre&gt;";
             $('#feedback').html(json);
 
@@ -38,7 +38,7 @@ function fire_ajax_submit() {
         },
         error: function (e) {
 
-            var json = "<h4>Ajax Response</h4>&lt;pre&gt;"
+            let json = "<h4>Ajax Response</h4>&lt;pre&gt;"
                 + e.responseText + "&lt;/pre&gt;";
             $('#feedback').html(json);
 

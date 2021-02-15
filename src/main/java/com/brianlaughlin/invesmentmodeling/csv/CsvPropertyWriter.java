@@ -32,7 +32,7 @@ public class CsvPropertyWriter {
             new NotNull()      // Status
     };
 
-    public CsvPropertyWriter(String csvFileName, List<PropertyExport> properties) throws IOException {
+    public CsvPropertyWriter(String csvFileName, List<PropertyExport> properties) {
         this.csvFileName = csvFileName;
         this.properties = properties;
     }
