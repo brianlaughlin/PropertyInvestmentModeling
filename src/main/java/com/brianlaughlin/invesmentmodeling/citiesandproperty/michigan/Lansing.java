@@ -9,5 +9,6 @@ public class Lansing extends City {
         state = "MI";
         investmentReturnMinimum = 0.12;
         defaultRehab = 3000.0;
+        defaultInsuranceRate = 0.025; // I don't know what this is //todo: replace with actual rate
     }
 }

@@ -9,5 +9,6 @@ public class Jacksonville extends City {
         state = "FL";
         investmentReturnMinimum = 0.12;
         defaultRehab = 8000.0;
+        defaultInsuranceRate = 0.025;  // todo: need to find actual value
     }
 }

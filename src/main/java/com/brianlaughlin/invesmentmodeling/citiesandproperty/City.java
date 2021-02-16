@@ -6,5 +6,6 @@ public abstract class City {
     public String state;
     public Double investmentReturnMinimum;
     public Double defaultRehab; // To accommodate unknown rehab amounts
+    public Double defaultInsuranceRate;
 
 }

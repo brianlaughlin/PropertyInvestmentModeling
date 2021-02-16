@@ -9,5 +9,6 @@ public class Detroit extends City {
         state = "MI";
         investmentReturnMinimum = 0.14;
         defaultRehab = 3000.0;
+        defaultInsuranceRate = 0.025;
     }
 }
