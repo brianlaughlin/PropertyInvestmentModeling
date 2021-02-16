@@ -37,6 +37,9 @@ public class Property extends Cities {
     PropertyStatus status;
     RehabState rehabState;
 
+    // Expenses
+    // todo: start to consider what utilities owner might be responsible for. Consider how to represeent this in a class
+
     public Property(String cityName, Double purchasePrice) {
         this.purchasePrice = purchasePrice;
         setCityClassByName(cityName);
