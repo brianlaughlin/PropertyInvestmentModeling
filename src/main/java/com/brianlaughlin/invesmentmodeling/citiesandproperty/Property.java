@@ -30,6 +30,8 @@ public class Property extends Cities {
     Double estimatedTakeoutExpenseRate = 0.10;
     Double padPercentage = 0.10;
     Double rentMultiplier = 0.0; // Rent ratio compared to purchase price
+    Double currentValue = 0.0; // this can be different from purchase price. One example would be looking at a property
+                                // years later.
 
     Double cashOnCashReturnIncludingDepreciation = 0.0;
 
