@@ -26,7 +26,7 @@ public class PropertySave {
             pe.setEstArv(p.getEstARV());
             pe.setTakeoutCost(p.getTakeOutCost());
             pe.setToiPercentage(p.getInvestorTakeOutRate());
-            pe.setStatus(String.valueOf(p.getStatus()));
+            pe.setStatus(String.valueOf(p.getMarketStatus()));
 
             propertyExports.add(pe);
 

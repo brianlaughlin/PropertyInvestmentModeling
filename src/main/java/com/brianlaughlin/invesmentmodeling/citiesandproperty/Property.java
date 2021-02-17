@@ -5,11 +5,12 @@ import lombok.Data;
 
 @Data
 public class Property extends Cities {
-    static final Double INVESTOR_PERCENTAGE = 0.75; // 75%
-    static final Double TEAM_PERCENTAGE = 0.25; // 25%
     public final Location location = new Location();
 
-    // misc
+    static final Double INVESTOR_PERCENTAGE = 0.75; // 75%
+    static final Double TEAM_PERCENTAGE = 0.25; // 25%
+
+    // Misc
     String notes;
 
 
@@ -33,7 +34,7 @@ public class Property extends Cities {
     // Features
     int interiorSqft = 0;
 
-    PropertyStatus status;
+    MarketStatus marketStatus;
     RehabState rehabState;
 
     // Expenses
@@ -72,7 +73,7 @@ public class Property extends Cities {
 
     public Property(String cityName, String street, String zipcode, Double rent,
                     Double propertyManagementRate, Double rehab, Double purchasePrice,
-                    PropertyStatus status) {
+                    MarketStatus marketStatus) {
         setCityClassByName(cityName);
         this.location.setStreet(street);
         this.location.setZipcode(zipcode);
@@ -80,7 +81,7 @@ public class Property extends Cities {
         this.propertyManagementRate = propertyManagementRate;
         this.rehab = rehab;
         this.purchasePrice = purchasePrice;
-        this.status = status;
+        this.marketStatus = marketStatus;
     }
 
     public Property(String cityName) {

@@ -1,6 +1,6 @@
 package com.brianlaughlin.invesmentmodeling.citiesandproperty;
 
-public enum PropertyStatus {
+public enum MarketStatus {
     ACTIVE,
     CANCELLED,
     IGNORED,
