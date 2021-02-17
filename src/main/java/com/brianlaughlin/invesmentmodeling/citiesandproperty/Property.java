@@ -7,12 +7,11 @@ import lombok.Data;
 public class Property extends Cities {
     static final Double INVESTOR_PERCENTAGE = 0.75; // 75%
     static final Double TEAM_PERCENTAGE = 0.25; // 25%
+    public final Location location = new Location();
 
-    // Location
-    String street;
-    String zipcode;
+    // misc
     String notes;
-    Integer neighborhoodRating;
+
 
     // Financials
     Double rent = 0.0;
@@ -50,8 +49,8 @@ public class Property extends Cities {
     public Property(String cityName, String street, String zipcode, Double rent, Double propertyManagementRate,
                     Double rehab, Double purchasePrice) {
         setCityClassByName(cityName);
-        this.street = street;
-        this.zipcode = zipcode;
+        this.location.setStreet(street);
+        this.location.setZipcode(zipcode);
         this.rent = rent;
         this.propertyManagementRate = propertyManagementRate;
         this.rehab = rehab;
@@ -62,8 +61,8 @@ public class Property extends Cities {
     public Property(String cityName, String street, String zipcode, Double rent, Double propertyManagementRate,
                     Double purchasePrice, RehabState rehabState, int interiorSqft) {
         setCityClassByName(cityName);
-        this.street = street;
-        this.zipcode = zipcode;
+        this.location.setStreet(street);
+        this.location.setZipcode(zipcode);
         this.rent = rent;
         this.propertyManagementRate = propertyManagementRate;
         this.purchasePrice = purchasePrice;
@@ -75,8 +74,8 @@ public class Property extends Cities {
                     Double propertyManagementRate, Double rehab, Double purchasePrice,
                     PropertyStatus status) {
         setCityClassByName(cityName);
-        this.street = street;
-        this.zipcode = zipcode;
+        this.location.setStreet(street);
+        this.location.setZipcode(zipcode);
         this.rent = rent;
         this.propertyManagementRate = propertyManagementRate;
         this.rehab = rehab;
@@ -101,7 +100,7 @@ public class Property extends Cities {
     }
 
     public void makeUpAddress() {
-        this.street = StreetNameGenerator.generateAddress();
+        this.location.setStreet(StreetNameGenerator.generateAddress());
     }
 
     public Double getAnnualIncome() {

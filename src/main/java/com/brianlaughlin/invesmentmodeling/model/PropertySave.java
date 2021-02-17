@@ -16,9 +16,9 @@ public class PropertySave {
     public List<PropertyExport> save() {
         for (Property p : properties) {
             PropertyExport pe = new PropertyExport();
-            pe.setStreet(p.getStreet());
+            pe.setStreet(p.location.getStreet());
             pe.setCity(p.getCityName());
-            pe.setZipcode(p.getZipcode());
+            pe.setZipcode(p.location.getZipcode());
             pe.setPurchasePrice(p.getPurchasePrice());
             pe.setRehab(p.getRehab());
             pe.setRent(p.getRent());
