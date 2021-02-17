@@ -2,7 +2,7 @@ package com.brianlaughlin.invesmentmodeling.calculators.rehab;
 
 import com.brianlaughlin.invesmentmodeling.calculators.Calculator;
 import com.brianlaughlin.invesmentmodeling.citiesandproperty.Property;
-import com.brianlaughlin.invesmentmodeling.citiesandproperty.RehabState;
+import com.brianlaughlin.invesmentmodeling.citiesandproperty.status.RehabStatus;
 
 public class CalcRehab implements Calculator {
 
@@ -12,12 +12,12 @@ public class CalcRehab implements Calculator {
     public double calc(Object o) {
         property = (Property) o;
 
-        return checkRehabEstimate(property.getInteriorSqft(), property.getRehabState());
+        return checkRehabEstimate(property.getInteriorSqft(), property.getRehabStatus());
     }
 
-    private Double checkRehabEstimate(int interiorSqft, RehabState rehabState) {
+    private Double checkRehabEstimate(int interiorSqft, RehabStatus rehabStatus) {
         double result = 0.0;
-        switch (rehabState) {
+        switch (rehabStatus) {
             case LIGHT:
                 if (interiorSqft <= 1500) result = 10000.0;
                 if (interiorSqft >= 1500 & interiorSqft < 2500) result = 15000.0;
@@ -50,7 +50,7 @@ public class CalcRehab implements Calculator {
     public Double calcMacMajor() {
         double result;
 
-        switch (property.getRehabState()){
+        switch (property.getRehabStatus()){
             case LIGHT:
                 result = 20.0 * property.getInteriorSqft();
                 break;

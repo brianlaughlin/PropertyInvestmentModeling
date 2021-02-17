@@ -1,12 +1,10 @@
 package com.brianlaughlin.invesmentmodeling.calculators.value;
 
 import com.brianlaughlin.invesmentmodeling.citiesandproperty.Property;
-import com.brianlaughlin.invesmentmodeling.citiesandproperty.RehabState;
+import com.brianlaughlin.invesmentmodeling.citiesandproperty.status.RehabStatus;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class IncomeApproachTest {
 
@@ -15,7 +13,7 @@ public class IncomeApproachTest {
     @Before
     public void setUp() throws Exception {
         p = new Property("Detroit", "123 Testing",
-                "48234", 750.0, 0.08, 27000.0, RehabState.LIGHT, 668);
+                "48234", 750.0, 0.08, 27000.0, RehabStatus.LIGHT, 668);
 
     }
 

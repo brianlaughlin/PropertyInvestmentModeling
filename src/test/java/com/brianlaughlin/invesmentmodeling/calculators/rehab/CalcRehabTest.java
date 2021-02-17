@@ -1,7 +1,7 @@
 package com.brianlaughlin.invesmentmodeling.calculators.rehab;
 
 import com.brianlaughlin.invesmentmodeling.citiesandproperty.Property;
-import com.brianlaughlin.invesmentmodeling.citiesandproperty.RehabState;
+import com.brianlaughlin.invesmentmodeling.citiesandproperty.status.RehabStatus;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,7 +12,7 @@ public class CalcRehabTest {
     @Before
     public void setUp() {
         p = new Property("Detroit", "123 Testing",
-                "48234", 750.0, 0.08, 27000.0, RehabState.LIGHT, 668);
+                "48234", 750.0, 0.08, 27000.0, RehabStatus.LIGHT, 668);
     }
 
     @Test
@@ -22,11 +22,11 @@ public class CalcRehabTest {
         Assert.assertEquals(10000.0, rehabCalculator.calc(p), 0.001);
         compareRehabMethods(rehabCalculator);
 
-        p.setRehabState(RehabState.AVERAGE);
+        p.setRehabStatus(RehabStatus.AVERAGE);
         Assert.assertEquals(25000.0, rehabCalculator.calc(p), 0.001);
         compareRehabMethods(rehabCalculator);
 
-        p.setRehabState(RehabState.HEAVY);
+        p.setRehabStatus(RehabStatus.HEAVY);
         Assert.assertEquals(50000.0, rehabCalculator.calc(p), 0.001);
         compareRehabMethods(rehabCalculator);
     }
@@ -44,11 +44,11 @@ public class CalcRehabTest {
         Assert.assertEquals(15000.0, rehabCalculator.calc(p), 0.001);
         compareRehabMethods(rehabCalculator);
 
-        p.setRehabState(RehabState.AVERAGE);
+        p.setRehabStatus(RehabStatus.AVERAGE);
         Assert.assertEquals(35000.0, rehabCalculator.calc(p), 0.001);
         compareRehabMethods(rehabCalculator);
 
-        p.setRehabState(RehabState.HEAVY);
+        p.setRehabStatus(RehabStatus.HEAVY);
         Assert.assertEquals(75000.0, rehabCalculator.calc(p), 0.001);
         compareRehabMethods(rehabCalculator);
     }

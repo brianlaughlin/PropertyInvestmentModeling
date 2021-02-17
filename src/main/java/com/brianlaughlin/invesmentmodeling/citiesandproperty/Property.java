@@ -1,5 +1,7 @@
 package com.brianlaughlin.invesmentmodeling.citiesandproperty;
 
+import com.brianlaughlin.invesmentmodeling.citiesandproperty.status.MarketStatus;
+import com.brianlaughlin.invesmentmodeling.citiesandproperty.status.RehabStatus;
 import com.brianlaughlin.invesmentmodeling.faker.StreetNameGenerator;
 import lombok.Data;
 
@@ -35,7 +37,7 @@ public class Property extends Cities {
     int interiorSqft = 0;
 
     MarketStatus marketStatus;
-    RehabState rehabState;
+    RehabStatus rehabStatus;
 
     // Expenses
     // todo: start to consider what utilities owner might be responsible for. Consider how to represeent this in a class
@@ -60,14 +62,14 @@ public class Property extends Cities {
 
     // Use for constrction rehab estimates
     public Property(String cityName, String street, String zipcode, Double rent, Double propertyManagementRate,
-                    Double purchasePrice, RehabState rehabState, int interiorSqft) {
+                    Double purchasePrice, RehabStatus rehabStatus, int interiorSqft) {
         setCityClassByName(cityName);
         this.location.setStreet(street);
         this.location.setZipcode(zipcode);
         this.rent = rent;
         this.propertyManagementRate = propertyManagementRate;
         this.purchasePrice = purchasePrice;
-        this.rehabState = rehabState;
+        this.rehabStatus = rehabStatus;
         this.interiorSqft = interiorSqft;
     }
 

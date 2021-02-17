@@ -1,4 +1,4 @@
-package com.brianlaughlin.invesmentmodeling.citiesandproperty;
+package com.brianlaughlin.invesmentmodeling.citiesandproperty.status;
 
 public enum MarketStatus {
     ACTIVE,

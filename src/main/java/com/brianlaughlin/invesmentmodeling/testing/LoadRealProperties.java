@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static com.brianlaughlin.invesmentmodeling.citiesandproperty.MarketStatus.*;
+import static com.brianlaughlin.invesmentmodeling.citiesandproperty.status.MarketStatus.*;
 
 public class LoadRealProperties {
     final List<Property> properties = new ArrayList<>();
